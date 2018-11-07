@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SmartSchool.Models.Students>
+
+@{
+    ViewBag.Title = "Students";
+    Layout = "~/Views/ERP/_AdminLayout.cshtml";
+}
+
+<h4 class="h-position">Students</h4>
+<hr class="hr-design">
+<!-- Search form -->
+<form class="form-inline active-cyan-4">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+</form>
+<p>
+    
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th style="width: 20%">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th style="width: 15%">
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th style="width: 8%">
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th style="width: 15%">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th style="width: 15%">
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th style="width: 20%">
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+        </tr>
+    </thead>
+    
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>

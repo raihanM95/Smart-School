@@ -1,0 +1,166 @@
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\ApplicationInsights.config
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\csc.exe
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\System.Collections.Immutable.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\System.Reflection.Metadata.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\vbc.exe
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\VBCSCompiler.exe
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\VBCSCompiler.exe.config
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\SmartSchool.dll.config
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\SmartSchool.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\SmartSchool.pdb
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Antlr3.Runtime.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.SqlServer.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.DependencyCollector.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.Web.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.WindowsServer.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.ApplicationInsights.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Google.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Web.Infrastructure.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Newtonsoft.Json.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Owin.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Helpers.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Mvc.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Optimization.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Razor.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Deployment.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Razor.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\WebGrease.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.DependencyCollector.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.Web.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.WindowsServer.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.ApplicationInsights.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Helpers.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Mvc.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Optimization.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Razor.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Deployment.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Razor.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Antlr3.Runtime.pdb
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Newtonsoft.Json.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.SqlServer.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Google.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\obj\Debug\SmartSchool.csprojResolveAssemblyReference.cache
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\obj\Debug\SmartSchool.dll
+E:\Important File\Programs\Visual Studio\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\obj\Debug\SmartSchool.pdb
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\ApplicationInsights.config
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\csc.exe
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\System.Collections.Immutable.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\System.Reflection.Metadata.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\vbc.exe
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\VBCSCompiler.exe
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\roslyn\VBCSCompiler.exe.config
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\SmartSchool.dll.config
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\SmartSchool.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\SmartSchool.pdb
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Antlr3.Runtime.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.SqlServer.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.DependencyCollector.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.Web.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.WindowsServer.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.ApplicationInsights.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Google.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Web.Infrastructure.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Newtonsoft.Json.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Owin.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Helpers.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Mvc.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Optimization.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Razor.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Deployment.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Razor.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\WebGrease.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.DependencyCollector.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.Web.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AI.WindowsServer.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.ApplicationInsights.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Helpers.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Mvc.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Optimization.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.Razor.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Deployment.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\System.Web.WebPages.Razor.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Antlr3.Runtime.pdb
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Newtonsoft.Json.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\EntityFramework.SqlServer.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Google.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\obj\Debug\SmartSchool.csprojResolveAssemblyReference.cache
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\obj\Debug\SmartSchool.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\obj\Debug\SmartSchool.pdb
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Dapper.dll
+E:\Important File\Programs\C#\SWE-331_(Object Oriented Software Development)\SmartSchool\SmartSchool\bin\Dapper.xml

@@ -1,0 +1,152 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+/*Layout*/
+.menu{
+    float:left;
+}
+
+.menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li{
+    padding: 15px;
+    position: relative;
+    width: 160px;
+    vertical-align: middle;
+    background-color: #34495E;
+    cursor: pointer;
+    border-top: 1px solid #BDC3C7;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.menu ul li:hover{
+    background-color: #2ECC71;
+}
+
+.menu > ul > li{
+    border-right: 5px solid #F1C40F;
+}
+
+.icon{
+    margin-right: 15px;
+    color: white;
+}
+
+.menu ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+/*End*/
+
+/*Body*/
+.body-right{
+    margin-top: 0px;
+    margin-left: 200px;
+    margin-right: 40px;
+}
+
+/*Admin Actions CSS*/
+.admin-action-icon{
+    margin-right: 2px;
+    color: white;
+}
+
+.admin-back-icon{
+    margin-right: 4px;
+    color: #428bca;
+}
+
+.admin-action-teacher{
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-action-teacher:hover{
+    text-decoration: none;
+}
+
+.admin-action-btn{
+    margin: 3px;
+}
+/*End*/
+
+/*Common Margin*/
+.t-margin{
+    margin-top: -240px;
+}
+
+/*Add Teachers ID*/
+.btn-add-t{
+    margin-top: -420px;
+}
+
+/*Update Teacher Info*/
+.btn-update-t{
+    margin-top: -300px;
+}
+
+/*Assign & Update Teacher*/
+.a-sub-t{
+    margin-top: -240px;
+}
+
+.a-cls-t{
+    margin-top: -170px;
+}
+
+.a-sec-t{
+    margin-top: -100px;
+}
+
+.a-clst-t{
+    margin-top: -30px;
+}
+
+.a-sect-t{
+    margin-top: 10px;
+}
+
+.btn-assign-t{
+    margin-top: 20px;
+}
+/*End*/
+
+/*Assign & Update Class*/
+.a-cls-cls{
+    margin-top: -240px;
+}
+
+.a-sec-cls{
+    margin-top: -170px;
+}
+
+.a-year-cls{
+    margin-top: -100px;
+}
+
+.a-roll-cls{
+    margin-top: -30px;
+}
+
+.btn-assign-cls{
+    margin-top: 20px;
+}
+/*End*/
+
+/*Notice Board*/
+.file-margin{
+    margin-top: -170px;
+}
+
+.btn-publish{
+    margin-top: -120px;
+}
+/*End*/

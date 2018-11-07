@@ -1,0 +1,31 @@
+﻿body {
+}
+
+/*for image slides*/
+.carousel-div{
+    margin-top: 15px;
+}
+
+.slides-image{
+    width: 1000px;
+    margin-left: 80px;
+}
+
+#image-height{
+    height: 300px;
+}
+
+/*for button*/
+.button-div{
+    margin-top: 15px;
+    width: 185px;
+}
+
+.btn-margin{
+    margin-right: 10px;
+}
+
+.button-div-erp{
+    margin-top: 15px;
+    width: 200px;
+}

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/AdminStyle.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title - Admin</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <span class="fa fa-home icon"></span>@Html.ActionLink("Home", "Home", "ERP")
+            </li>
+            <li>
+                <span class="fa fa-users icon"></span>@Html.ActionLink("Teachers", "ViewTeachers", "Teachers")
+            </li>
+            <li>
+                <span class="fa fa-book icon"></span>@Html.ActionLink("Subject", "ViewAssign", "Teachers")
+            </li>
+            <li>
+                <span class="fa fa-users icon"></span>@Html.ActionLink("Students", "ViewStudents", "Students")
+            </li>
+            <li>
+                <span class="fa fa-plus-circle icon"></span>@Html.ActionLink("Class", "ViewAssign", "Students")
+            </li>
+            <li>
+                <span class="fa fa-bell icon"></span>@Html.ActionLink("Notice", "ViewNotice", "NoticeBoard")
+            </li>
+            <li>
+                <span class="fa fa-sign-out icon"></span>@Html.ActionLink("Logout", "", "")
+            </li>
+        </ul>
+    </div>
+    <div class="body-right">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Smart School. All rights reserved.</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

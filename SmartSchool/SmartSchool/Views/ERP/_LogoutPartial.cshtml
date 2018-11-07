@@ -1,0 +1,7 @@
+﻿@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Logout", "ERP", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        <a href="javascript:document.getelementById('logoutForm').submit()">Logout</a>
+    }
+}

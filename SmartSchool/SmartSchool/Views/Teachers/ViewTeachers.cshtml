@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SmartSchool.Models.Teachers>
+
+@{
+    ViewBag.Title = "Teachers";
+    Layout = "~/Views/ERP/_AdminLayout.cshtml";
+}
+
+<h4 class="h-position">Teachers</h4>
+<hr class="hr-design">
+
+<p>
+    <button class="btn btn-info" onclick="location.href='@Url.Action("AddTeachersID", "Teachers")'"><span class="fa fa-user-plus admin-action-icon"></span>Add</button>
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th style="width: 20%">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Initial)
+            </th>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th style="width: 15%"></th>
+        </tr>
+    </thead>
+    
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Initial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                <td>
+                    <p class="btn btn-primary btn-sm admin-action-btn"><span class="fa fa-pencil-square-o admin-action-icon"></span>@Html.ActionLink("Edit", "UpdateTeacherInfo", new { id = item.Id }, new { @class = "admin-action-teacher" })</p>
+                    <p class="btn btn-info btn-sm admin-action-btn"><span class="fa fa-eye admin-action-icon"></span>@Html.ActionLink("Details", "ViewDetails", new { id = item.Id }, new { @class = "admin-action-teacher" })</p>
+                    <p class="btn btn-danger btn-sm admin-action-btn"><span class="fa fa-trash admin-action-icon"></span>@Html.ActionLink("Delete", "DeleteTeacher", new { id = item.Id }, new { @class = "admin-action-teacher", onclick = "return confirm('Are sure wants to delete?');" })</p>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
