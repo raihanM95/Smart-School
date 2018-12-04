@@ -9,18 +9,21 @@
 <hr class="hr-design">
 
 <p>
-    <button class="btn btn-info" onclick="location.href='@Url.Action("AddTeachersID", "Teachers")'"><span class="fa fa-user-plus admin-action-icon"></span>Add</button>
+    <button class="btn btn-info" onclick="location.href='@Url.Action("AddTeachersID", "Teachers")'"><span class="fa fa-user-plus admin-action-icon"></span>Add Teacher Id</button>
+    <button class="btn btn-info" onclick="location.href='@Url.Action("ViewClassTeachers", "Teachers")'"><span class="fa fa-eye admin-action-icon"></span>View Class Teachers</button>
 </p>
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
+            <th style="width: 1%">Serial</th>
             <th style="width: 10%">
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th style="width: 20%">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th style="width: 10%">
+            <th style="width: 5%">
                 @Html.DisplayNameFor(model => model.Initial)
             </th>
             <th style="width: 10%">
@@ -29,11 +32,13 @@
             <th style="width: 15%"></th>
         </tr>
     </thead>
-    
+
+    @{ int rowNo = 0; }
     @foreach (var item in Model)
     {
         <tbody>
             <tr>
+                <td>@(rowNo += 1)</td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Id)
                 </td>

@@ -1,0 +1,70 @@
+﻿@model SmartSchool.Models.Subject
+
+@{
+    ViewBag.Title = "Assign Subject";
+    Layout = "~/Views/ERP/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AssignSubject", "Subject", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 class="h-position">Assign Subject</h4>
+        <hr class="hr-design">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Initial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Initial, new SelectList(Model.Initials, "Value", "Text"), "--- Select Initial ---", new { @class = "form-control", required = "Initial required" })
+                @Html.ValidationMessageFor(model => model.Initial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group a-cls-t">
+            @Html.LabelFor(model => model.ClassNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ClassNo, new SelectList(Model.Classes, "Value", "Text"), "--- Select Class ---", new { @class = "form-control", required = "Class required", onchange = "this.form.submit();" })
+                @Html.ValidationMessageFor(model => model.ClassNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group a-sec-t">
+            @Html.LabelFor(model => model.Section, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Section, new SelectList(Model.Sections, "Value", "Text"), "--- Select Section ---", new { @class = "form-control", required = "Section required", onchange = "this.form.submit();" })
+                @Html.ValidationMessageFor(model => model.Section, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group a-sub-t">
+            @Html.LabelFor(model => model.SubjectName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SubjectName, new SelectList(Model.Subjects, "Value", "Text"), "--- Select Subject ---", new { @class = "form-control", required = "Subject required" })
+                @Html.ValidationMessageFor(model => model.SubjectName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-success btn-assign-t">Assign</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <span class="fa fa-undo admin-back-icon"></span>@Html.ActionLink("Back to List", "ViewAssign")
+</div>
+
+<center>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+</center>

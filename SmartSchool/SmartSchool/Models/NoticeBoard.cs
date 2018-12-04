@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using Dapper;
 
 namespace SmartSchool.Models
@@ -19,65 +21,41 @@ namespace SmartSchool.Models
         [Display(Name = "Title")]
         public string Title { get; set; }
 
-        [Display(Name = "Uploaded file")]
+        [Display(Name = "File name")]
         public string FileName { get; set; }
 
-        public byte[] FileContent { get; set; }
+        [Display(Name = "Uploaded file")]
+        public string FilePath { get; set; }
+
+        public HttpPostedFileBase Files { get; set; }
 
         [Required(ErrorMessage = "Date required")]
         [Display(Name = "Date")]
         [DataType(DataType.Date)]
         public DateTime? Date { get; set; }
 
-        [Required]
-        [DataType(DataType.Upload)]
-        [Display(Name = "Select file")]
-        public HttpPostedFileBase Files { get; set; }
+        // For SearchBox
+        public string Search { get; set; }
+
+        // For "viewNotices" method values store and view in "ViewNotices" html page
+        public List<NoticeBoard> Data { get; set; }
 
         public bool publishNotice()
         {
-            //string query = @"INSERT INTO NoticeBoard (Title, FileName, FileContent, Date) VALUES ('" + Title + "', '" + FileName + "', @FileContent, '" + Date + "')";
-            
-            //SqlCommand command = new SqlCommand(query);
-            //command.Parameters.Add("@Title", Title);
-            //command.Parameters.Add("@FileName", FileName);
-            //command.Parameters.Add("@FileContent", SqlDbType.VarBinary).Value = FileContent;
-            //command.Parameters.Add("@Date", Date);
-            //int i = dam.Execute(query);
+            string query = @"INSERT INTO NoticeBoard (Title, FileName, FilePath, Date) VALUES ('" + Title + "', '" + FileName + "', '" + FilePath + "', '" + Date + "')";
 
+            int i = dam.Execute(query);
 
-            //int i = dam.Save(command);
-
-            try
-            {
-                SqlConnection con = new SqlConnection(dam.ConnnectionString);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                DynamicParameters Parm = new DynamicParameters();
-                Parm.Add("@Title", Title);
-                Parm.Add("@FileName", FileName);
-                Parm.Add("@FileContent", FileContent);
-                Parm.Add("@Date", Date);
-                con.Execute("NoticeBoard", Parm, commandType: System.Data.CommandType.StoredProcedure);
-                return true;
-            }
-            catch (Exception ex) {
-                return false;
-            }
-
-            /*if (i >= 1)
+            if (i >= 1)
                 return true;
             else
-                return false;*/
+                return false;
         }
 
         public List<NoticeBoard> viewNotices()
         {
             List<NoticeBoard> noticelist = new List<NoticeBoard>();
-            string query = @"SELECT* FROM NoticeBoard";
+            string query = @"SELECT* FROM NoticeBoard WHERE Title LIKE '%" + Search + "%' OR Date LIKE '%" + Search + "%' ORDER BY Date DESC";
 
             foreach (DataRow dr in dam.GetDataTable(query).Rows)
             {
@@ -86,10 +64,34 @@ namespace SmartSchool.Models
                     Id = Convert.ToInt32(dr["Id"]),
                     Title = Convert.ToString(dr["Title"]),
                     FileName = Convert.ToString(dr["FileName"]),
-                    FileContent = (Byte[])(dr["FileContent"]),
+                    FilePath = Convert.ToString(dr["FilePath"]),
+                    Date = Convert.ToDateTime(dr["Date"]),
                 });
             }
             return noticelist;
+        }
+
+        public void GetFiles(int id)
+        {
+            string query = @"SELECT* FROM NoticeBoard WHERE Id = " + Id + "";
+
+            foreach (DataRow dr in dam.GetDataTable(query).Rows)
+            {
+                FileName = Convert.ToString(dr["FileName"]);
+                FilePath = Convert.ToString(dr["FilePath"]);
+            }
+        }
+
+        public bool deleteFile(int id)
+        {
+            string query = @"DELETE FROM NoticeBoard WHERE Id = " + id + "";
+
+            int i = dam.Execute(query);
+
+            if (i >= 1)
+                return true;
+            else
+                return false;
         }
     }
 }

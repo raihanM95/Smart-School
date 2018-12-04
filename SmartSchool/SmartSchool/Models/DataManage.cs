@@ -23,10 +23,19 @@ namespace SmartSchool.Models
 
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
-            da.Fill(dt);
-            count = Convert.ToInt32(dt.Rows.Count.ToString());
-            
-            return dt;
+            try
+            {
+                da.Fill(dt);
+                count = Convert.ToInt32(dt.Rows.Count.ToString());
+
+                con.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                con.Close();
+                return dt;
+            }
         }
 
         public int Execute(string query)
@@ -41,11 +50,13 @@ namespace SmartSchool.Models
             {
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
+
+                con.Close();
                 return 1;
             }
             catch (SqlException ex)
             {
-
+                con.Close();
                 return 0;
             }
         }
@@ -63,10 +74,13 @@ namespace SmartSchool.Models
             try
             {
                 cmd.ExecuteNonQuery();
+
+                con.Close();
                 return 1;
             }
             catch (Exception ex)
             {
+                con.Close();
                 return 0;
             }
         }

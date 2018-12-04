@@ -13,11 +13,9 @@ namespace SmartSchool.Models
         [Required(ErrorMessage = "Please enter your username")]
         public string UserName { get; set; }
 
-        [DataType(DataType.Password)]
         [Required(ErrorMessage = "Please enter your password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        public bool RememberMe { get; set; }
 
         public string Login()
         {

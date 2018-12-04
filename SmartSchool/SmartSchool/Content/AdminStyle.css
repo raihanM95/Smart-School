@@ -1,4 +1,11 @@
-﻿body {
+﻿
+/*
+    This software developed by Raihan Mahmud
+    B.Sc in Software Engineering in Daffodil International University
+    Dhaka, Bangladesh.
+*/
+
+body {
     padding: 0;
     margin: 0;
 }
@@ -88,33 +95,98 @@
     margin-top: -420px;
 }
 
+/*Add Section*/
+.btn-add-s{
+    margin-top: -300px;
+}
+
 /*Update Teacher Info*/
 .btn-update-t{
     margin-top: -300px;
 }
 
-/*Assign & Update Teacher*/
-.a-sub-t{
+/*Assign & Update Subject*/
+.a-cls-t{
     margin-top: -240px;
 }
 
-.a-cls-t{
+.a-sec-t{
     margin-top: -170px;
 }
 
-.a-sec-t{
+.a-sub-t{
     margin-top: -100px;
 }
 
-.a-clst-t{
+.btn-assign-t{
     margin-top: -30px;
 }
+/*End*/
 
-.a-sect-t{
-    margin-top: 10px;
+/*Add & Update Students*/
+
+.a-stdnt-nme{
+    margin-top: -240px;
 }
 
-.btn-assign-t{
+.a-stdnt-img{
+    margin-top: -190px;
+}
+
+.a-stdnt-dob{
+    margin-top: -140px;
+}
+
+.a-stdnt-gndr{
+    margin-top: -90px;
+}
+
+.gndr-m{
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.gndr-fm{
+    margin-left: 5px;
+}
+
+.a-stdnt-eml{
+    margin-top: -40px;
+}
+
+.a-stdnt-phn{
+
+}
+
+.a-stdnt-adrs{
+
+}
+
+.btn-add-stdnt{
+    
+}
+
+.u-stdnt-dob{
+    margin-top: -240px;
+}
+
+.u-stdnt-gndr{
+    margin-top: -190px;
+}
+
+.u-stdnt-eml{
+    margin-top: -140px;
+}
+
+.u-stdnt-phn{
+    margin-top: -70px;
+}
+
+.u-stdnt-adrs{
+    margin-top: 0px;
+}
+
+.btn-updt-stdnt{
     margin-top: 20px;
 }
 /*End*/
@@ -148,5 +220,37 @@
 
 .btn-publish{
     margin-top: -120px;
+}
+/*End*/
+
+/*Search*/
+.search-key {
+    width: 123px;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    padding: 12px 20px 12px 12px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-key:focus {
+    width: 100%;
+}
+
+.btn-sr{
+    width: 40px;
+    height: 35px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-sr:hover {
+    border: 1px solid #6A5ACD;
+    background: #4682B4;
 }
 /*End*/

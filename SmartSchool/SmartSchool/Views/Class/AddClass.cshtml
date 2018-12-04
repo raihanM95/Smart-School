@@ -1,0 +1,46 @@
+﻿@model SmartSchool.Models.Class
+
+@{
+    ViewBag.Title = "Add Class";
+    Layout = "~/Views/ERP/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddClass", "Class", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4 class="h-position">Add Class</h4>
+        <hr class="hr-design">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ClassNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ClassNo, new { htmlAttributes = new { @class = "form-control", required = "Class required", @placeholder = "Enter new class" } })
+                @Html.ValidationMessageFor(model => model.ClassNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-success btn-add-t">Add</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <span class="fa fa-undo admin-back-icon"></span>@Html.ActionLink("Back to List", "ViewClass")
+</div>
+
+<center>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+</center>

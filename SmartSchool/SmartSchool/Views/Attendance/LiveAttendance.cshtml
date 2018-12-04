@@ -1,0 +1,60 @@
+﻿@model SmartSchool.Models.Attendance
+
+@{
+    ViewBag.Title = "Live Attendance";
+    Layout = "~/Views/Parents/_ParentsLayout.cshtml";
+}
+
+<h2></h2>
+<h4 class="h-position">Attendance</h4>
+<hr class="hr-design">
+
+@using (Html.BeginForm())
+{
+    <table align="center">
+        <tr>
+            <td>
+                <label>Class: </label>
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.ClassNo, new SelectList(Model.Classes, "Value", "Text"), "--- Select Class ---", new { @class = "form-control", onchange = "this.form.submit();" })
+            </td>
+            <td style="width: 20px"></td>
+            <td>
+                <label>Search: </label>
+            </td>
+            <td>
+                <!-- Search -->
+                @Html.EditorFor(model => model.Search, new { htmlAttributes = new { @class = "form-control", @placeholder = "Date like 01-01-2018" }, onchange = "this.form.submit();" })
+            </td>
+            <td>
+                <button type="submit" class="btn-sr"><i class="fa fa-search"></i></button>
+            </td>
+        </tr>
+        <tr style="height: 10px"></tr>
+    </table>
+}
+
+<table class="table table-bordered table-hover" style="width: 530px" align="center">
+    <thead>
+        <tr>
+            <th style="width: 5%">Serial</th>
+            <th style="width: 20%">
+                @Html.DisplayNameFor(model => model.ADate)
+            </th>
+        </tr>
+    </thead>
+
+    @{ int rowNo = 0; }
+    @foreach (var item in Model.Data)
+    {
+        <tbody>
+            <tr>
+                <td>@(rowNo += 1)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ADate)
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>

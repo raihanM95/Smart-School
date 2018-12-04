@@ -13,17 +13,51 @@ namespace SmartSchool.Controllers
         // ERP/ERP
         public ActionResult ERP()
         {
-            return View();
+            if (Request.Cookies.Get("admin") != null)
+            {
+                return RedirectToAction("Home", "ERP");
+            }
+            else if (Request.Cookies.Get("teacher") != null)
+            {
+                return RedirectToAction("Index", "Teachers");
+            }
+            else if (Request.Cookies.Get("parents") != null)
+            {
+                return RedirectToAction("Index", "Parents");
+            }
+            else if (Request.Cookies.Get("student") != null)
+            {
+                return RedirectToAction("Index", "Students");
+            }
+            else
+            {
+                return View();
+            }
         }
 
-        // GET: /ERP/Login
+        // GET: ERP/Login // for admin
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            if (Request.Cookies.Get("admin") != null)
+            {
+                return RedirectToAction("Home", "ERP");
+            }
+            else if (Request.Cookies.Get("teacher") != null)
+            {
+                return RedirectToAction("Index", "Teachers");
+            }
+            else if (Request.Cookies.Get("parents") != null)
+            {
+                return RedirectToAction("Index", "Parents");
+            }
+            else
+            {
+                return View();
+            }
         }
 
-        // POST: /ERP/Login
+        // POST: ERP/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(Admin admin, string ReturnUrl="")
@@ -35,13 +69,12 @@ namespace SmartSchool.Controllers
                     string message = admin.Login();
                     if (message.Equals("1"))
                     {
-                        /*int timeout = admin.RememberMe ? 1440 : 20;
-                        var ticket = new FormsAuthenticationTicket(admin.UserName, admin.RememberMe, timeout);
+                        int timeout = 1440; // 1440 min = 1 day
+                        var ticket = new FormsAuthenticationTicket(admin.UserName, false, timeout);
                         string encrypted = FormsAuthentication.Encrypt(ticket);
-                        var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
+                        HttpCookie cookie = new HttpCookie("admin", encrypted);
                         cookie.Expires = DateTime.Now.AddMinutes(timeout);
-                        cookie.HttpOnly = true;
-                        Response.Cookies.Add(cookie);*/
+                        Response.Cookies.Add(cookie);
 
                         if (Url.IsLocalUrl(ReturnUrl))
                         {
@@ -66,18 +99,26 @@ namespace SmartSchool.Controllers
         }
 
         //Logout
-        /*[Authorize]
-        [HttpPost]
+        //[Authorize]
+        //[HttpPost]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "ERP");
-        }*/
+            Response.Cookies["admin"].Expires = DateTime.Now.AddDays(-1);
+            return RedirectToAction("ERP", "ERP");
+        }
 
-        // ERP/Home
+        // ERP/Home // by admin
         public ActionResult Home()
         {
-            return View();
+            if (Request.Cookies.Get("admin") != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "ERP");
+            }
         }
     }
 }

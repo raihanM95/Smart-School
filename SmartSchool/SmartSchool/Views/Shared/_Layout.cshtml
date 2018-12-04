@@ -22,13 +22,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="dropdown">@Html.ActionLink("Academic", "", "")
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Result", "", "")</li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Teachers", "", "")</li>
-                    <li>@Html.ActionLink("Notice Board", "", "")</li>
+                    <li>@Html.ActionLink("Result", "Result", "Marks")</li>
+                    <li>@Html.ActionLink("Teachers", "TeachersList", "Teachers")</li>
+                    <li>@Html.ActionLink("Notice Board", "Notice", "NoticeBoard")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
                 </ul>

@@ -1,0 +1,69 @@
+﻿@model SmartSchool.Models.Subject
+
+@{
+    ViewBag.Title = "View Assign";
+    Layout = "~/Views/ERP/_AdminLayout.cshtml";
+}
+
+<h4 class="h-position">Assign Subjects</h4>
+<hr class="hr-design">
+
+<p>
+    <button class="btn btn-info" onclick="location.href='@Url.Action("AssignSubject", "Subject")'"><span class="fa fa-plus admin-action-icon"></span>Assign Subject</button>
+    <button class="btn btn-info" onclick="location.href='@Url.Action("ViewSubject", "Subject")'"><span class="fa fa-eye admin-action-icon"></span>View Subject</button>
+</p>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                <label>Class: </label>
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.ClassNo, new SelectList(Model.Classes, "Value", "Text"), "--- Select Class ---", new { @class = "form-control", onchange = "this.form.submit();" })
+            </td>
+            <td style="width: 20px"></td>
+            <td>
+                <label>Section: </label>
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.Section, new SelectList(Model.Sections, "Value", "Text"), "--- Select Section ---", new { @class = "form-control", onchange = "this.form.submit();" })
+            </td>
+        </tr>
+        <tr style="height: 10px"></tr>
+    </table>
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="width: 1%">Serial</th>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Initial)
+            </th>
+            <th style="width: 20%">
+                @Html.DisplayNameFor(model => model.SubjectName)
+            </th>
+            <th style="width: 5%"></th>
+        </tr>
+    </thead>
+
+    @{ int rowNo = 0; }
+    @foreach (var item in Model.Data)
+    {
+        <tbody>
+            <tr>
+                <td>@(rowNo += 1)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Initial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubjectName)
+                </td>
+                <td>
+                    <p class="btn btn-danger btn-sm admin-action-btn"><span class="fa fa-trash admin-action-icon"></span>@Html.ActionLink("Delete", "DeleteAssign", new { id = item.Id }, new { @class = "admin-action-teacher", onclick = "return confirm('Are sure wants to delete?');" })</p>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>

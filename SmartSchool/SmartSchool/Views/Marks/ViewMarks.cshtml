@@ -1,0 +1,87 @@
+﻿@model SmartSchool.Models.Marks
+
+@{
+    ViewBag.Title = "View Marks";
+    Layout = "~/Views/Teachers/_TeacherLayout.cshtml";
+}
+
+<h2></h2>
+<h4 class="h-position">Marks</h4>
+<hr class="hr-design">
+
+@using (Html.BeginForm())
+{
+    <table align="center">
+        <tr>
+            <td>
+                <label>Class: </label>
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.ClassNo, new SelectList(Model.Classes, "Value", "Text"), "--- Select Class ---", new { @class = "form-control", onchange = "this.form.submit();" })
+            </td>
+            <td style="width: 20px"></td>
+            <td>
+                <label>Section: </label>
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.Section, new SelectList(Model.Sections, "Value", "Text"), "--- Select Section ---", new { @class = "form-control", onchange = "this.form.submit();" })
+            </td>
+            <td style="width: 20px"></td>
+            <td>
+                <label>Year: </label>
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.Year, new SelectList(Model.Years, "Value", "Text"), "--- Select Year ---", new { @class = "form-control", onchange = "this.form.submit();" })
+            </td>
+        </tr>
+        <tr style="height: 10px"></tr>
+        <tr>
+            <td>
+                <label>Subject: </label>
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.SubjectName, new SelectList(Model.Subjects, "Value", "Text"), "--- Select Subject ---", new { @class = "form-control", onchange = "this.form.submit();" })
+            </td>
+        </tr>
+        <tr style="height: 10px"></tr>
+    </table>
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Roll)
+            </th>
+            <th style="width: 20%">
+                @Html.DisplayNameFor(model => model.StudentID)
+            </th>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Mid)
+            </th>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Final)
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model.Data)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roll)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Final)
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>

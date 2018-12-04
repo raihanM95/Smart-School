@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SmartSchool.Models.Teachers>
+
+@{
+    ViewBag.Title = "Teachers";
+}
+
+<h2></h2>
+<h4 class="h-position">All Teachers</h4>
+<hr class="hr-design">
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="width: 15%">
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th style="width: 20%">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th style="width: 15%">
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th style="width: 15%">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th style="width: 15%">
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    <img width="100" height="100" src="~/TeachersImage/@Html.DisplayFor(modelItem => item.ImagePath)" alt="Image Not Available" class="img-circle" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>

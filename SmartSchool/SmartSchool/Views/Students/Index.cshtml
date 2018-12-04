@@ -1,0 +1,74 @@
+﻿@model SmartSchool.Models.Students
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Students/_StudentLayout.cshtml";
+}
+
+<h2></h2>
+<h4 class="h-position">Profile</h4>
+<hr class="hr-design">
+
+<p class="btn btn-primary btn-sm action-btn"><span class="fa fa-pencil-square-o action-icon"></span>@Html.ActionLink("Edit", "UpdateInfo", new { }, new { @class = "action-board" })</p>
+
+<div style="width: 400px; margin: auto;" align="center">
+    <img width="200" height="200" src="~/StudentsImage/@Html.DisplayFor(model => model.ImagePath)" alt="Image Not Available" class="img-circle" />
+</div>
+<table class="table table-bordered table-hover" style="width: 400px" align="center">
+    <tr>
+        <td style="text-align: right">
+            Id:
+        </td>
+        <td style="width: 400px">
+            @Html.DisplayFor(model => model.Id)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">
+            Name:
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">
+            Date of Birth:
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">
+            Gender:
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Gender)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">
+            Email:
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Email)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">
+            Phone:
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Phone)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">
+            Address:
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Address)
+        </td>
+    </tr>
+</table>

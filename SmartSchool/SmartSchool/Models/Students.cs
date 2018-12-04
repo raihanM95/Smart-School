@@ -19,11 +19,14 @@ namespace SmartSchool.Models
         // For DropDownlist
         public List<SelectListItem> Ids { get; set; }
 
-        public int AssignTableId { get; set; }
-
         //[Required(ErrorMessage = "Name required")]
         [Display(Name = "Name")]
         public string Name { get; set; }
+
+        [Display(Name = "Image")]
+        public string ImagePath { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
 
         //[Required(ErrorMessage = "DOB required")]
         [Display(Name = "Date of Birth")]
@@ -33,20 +36,6 @@ namespace SmartSchool.Models
         //[Required(ErrorMessage = "Gender required")]
         [Display(Name = "Gender")]
         public string Gender { get; set; }
-
-        //[Required(ErrorMessage = "Class required")]
-        [Display(Name = "Class")]
-        public int Class { get; set; }
-
-        // For DropDownlist
-        public List<SelectListItem> Classes { get; set; }
-
-        //[Required(ErrorMessage = "Section required")]
-        [Display(Name = "Section")]
-        public string Section { get; set; }
-
-        // For DropDownlist
-        public List<SelectListItem> Sections { get; set; }
 
         //[Required(ErrorMessage = "Year required")]
         [Display(Name = "Year")]
@@ -61,10 +50,12 @@ namespace SmartSchool.Models
 
         //[Required(ErrorMessage = "Email  required")]
         [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         //[Required(ErrorMessage = "Phone no required")]
         [Display(Name = "Phone")]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
 
         //[Required(ErrorMessage = "Address required")]
@@ -77,61 +68,25 @@ namespace SmartSchool.Models
 
         public bool RememberMe { get; set; }
 
-        public List<Students> viewStudents()
-        {
-            List<Students> studentslist = new List<Students>();
-            string query = @"SELECT* FROM Students";
+        // For SearchBox
+        public string Search { get; set; }
 
-            foreach (DataRow dr in dam.GetDataTable(query).Rows)
-            {
-                studentslist.Add(new Students
-                {
-                    Id = Convert.ToString(dr["Id"]),
-                    Name = Convert.ToString(dr["Name"]),
-                    //DateOfBirth = Convert.ToDateTime(dr["DateOfBirth"]),
-                    Gender = Convert.ToString(dr["Gender"]),
-                    Email = Convert.ToString(dr["Email"]),
-                    Phone = Convert.ToString(dr["Phone"]),
-                    Address = Convert.ToString(dr["Address"]),
-                });
-            }
-            return studentslist;
-        }
+        // For "viewStudents" method values store and view in "ViewStudents" html page
+        public List<Students> Data { get; set; }
 
         public Students()
         {
-            //All list for DropDownlist
-            Classes = new List<SelectListItem>()
+            //For DropDownlist
+            Ids = new List<SelectListItem>();
+            string query = @"SELECT* FROM Students";
+            foreach (DataRow dr in dam.GetDataTable(query).Rows)
             {
-                new SelectListItem {
-                    Text = "6", Value = "6"
-                },
-                new SelectListItem {
-                    Text = "7", Value = "7"
-                },
-                new SelectListItem {
-                    Text = "8", Value = "8"
-                },
-                new SelectListItem {
-                    Text = "9", Value = "9"
-                },
-                new SelectListItem {
-                    Text = "10", Value = "10"
-                }
-            };
-
-            Sections = new List<SelectListItem>()
-            {
-                new SelectListItem {
-                    Text = "A", Value = "A"
-                },
-                new SelectListItem {
-                    Text = "B", Value = "B"
-                },
-                new SelectListItem {
-                    Text = "C", Value = "C"
-                }
-            };
+                Ids.Add(new SelectListItem
+                {
+                    Text = Convert.ToString(dr["Id"]),
+                    Value = Convert.ToString(dr["Id"])
+                });
+            }
 
             Years = new List<SelectListItem>()
             {
@@ -148,24 +103,11 @@ namespace SmartSchool.Models
                     Text = "2021", Value = "2021"
                 }
             };
-
-            Ids = new List<SelectListItem>();
-            string query = @"SELECT* FROM Students";
-            foreach (DataRow dr in dam.GetDataTable(query).Rows)
-            {
-                Ids.Add(new SelectListItem
-                {
-                    Text = Convert.ToString(dr["Id"]),
-                    Value = Convert.ToString(dr["Id"])
-                });
-            }
         }
 
-        public bool assignIntoClass()
+        public bool addStudents()
         {
-            int cls = Convert.ToInt32(Class);
-
-            string query = @"INSERT INTO Assign_Class (Class, Section, Year, Student_Id, Roll) VALUES (" + cls + ", '" + Section + "', '" + Year + "', '" + Id + "', " + Roll + ")";
+            string query = @"INSERT INTO Students (Id, Name, DateOfBirth, Gender, Email, Phone, Address, Image) VALUES ('" + Id + "', '" + Name + "', '" + DateOfBirth + "', '" + Gender + "', '" + Email + "', '" + Phone + "', '" + Address + "', '" + ImagePath + "')";
 
             int i = dam.Execute(query);
 
@@ -175,29 +117,38 @@ namespace SmartSchool.Models
                 return false;
         }
 
-        public List<Students> viewAssign()
+        public List<Students> viewStudents()
         {
-            List<Students> assignlist = new List<Students>();
-            string query = @"SELECT* FROM Assign_Class";
+            List<Students> studentslist = new List<Students>();
+            string query = @"SELECT* FROM Students WHERE Id LIKE '%" + Search + "%' OR Name LIKE '%" + Search + "%' OR Address LIKE '%" + Search + "%'";
 
             foreach (DataRow dr in dam.GetDataTable(query).Rows)
             {
-                assignlist.Add(new Students
+                studentslist.Add(new Students
                 {
-                    AssignTableId = Convert.ToInt32(dr["Id"]),
-                    Id = Convert.ToString(dr["Student_Id"]),
-                    Class = Convert.ToInt32(dr["Class"]),
-                    Section = Convert.ToString(dr["Section"]),
-                    Year = Convert.ToString(dr["Year"]),
-                    Roll = Convert.ToInt32(dr["Roll"]),
+                    Id = Convert.ToString(dr["Id"]),
+                    Name = Convert.ToString(dr["Name"]),
+                    DateOfBirth = Convert.ToDateTime(dr["DateOfBirth"]),
+                    Gender = Convert.ToString(dr["Gender"]),
+                    Email = Convert.ToString(dr["Email"]),
+                    Phone = Convert.ToString(dr["Phone"]),
+                    Address = Convert.ToString(dr["Address"]),
+                    ImagePath = Convert.ToString(dr["Image"])
                 });
             }
-            return assignlist;
+            return studentslist;
         }
 
-        public void updateClass()
+        public void updateStudentInfo()
         {
-            string query = @"UPDATE Assign_Class SET Class = " + Class + ", Section = '" + Section + "', Year = '" + Year + "', Student_Id = '" + Id + "', Roll = " + Roll + " WHERE Id = " + AssignTableId + "";
+            string query = @"UPDATE Students SET Name = '" + Name + "', DateOfBirth = '" + DateOfBirth + "', Gender = '" + Gender + "', Email = '" + Email + "', Phone = '" + Phone + "', Address = '" + Address + "' WHERE Id = '" + Id + "'";
+
+            dam.Execute(query);
+        }
+
+        public void updateInfo(string id)
+        {
+            string query = @"UPDATE Students SET Name = '" + Name + "', Email = '" + Email + "', Phone = '" + Phone + "', Address = '" + Address + "', Image = '" + ImagePath + "' WHERE Id = '" + id + "'";
 
             dam.Execute(query);
         }

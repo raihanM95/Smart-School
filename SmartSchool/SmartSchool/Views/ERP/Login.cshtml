@@ -39,7 +39,7 @@
                 <label>Username:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", })
+                    @Html.EditorFor(m => m.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter your username" } })
                 </div>
                 @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
             </div>
@@ -47,7 +47,7 @@
                 <label>Password:</label>
                 <div class="group">
                     <i class="fas fa-unlock"></i>
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Enter password" })
                 </div>
                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
             </div>

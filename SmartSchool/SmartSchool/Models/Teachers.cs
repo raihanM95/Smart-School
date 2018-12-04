@@ -16,11 +16,14 @@ namespace SmartSchool.Models
         [Display(Name = "Teacher Id")]
         public string Id { get; set; }
 
-        public int AssignTableId { get; set; }
-
         //[Required(ErrorMessage = "Name required")]
         [Display(Name = "Name")]
         public string Name { get; set; }
+
+        [Display(Name = "Image")]
+        public string ImagePath { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
 
         //[Required(ErrorMessage = "Initial required")]
         [Display(Name = "Initial")]
@@ -33,45 +36,18 @@ namespace SmartSchool.Models
         [Display(Name = "Designation")]
         public string Designation { get; set; }
 
-        //[Required(ErrorMessage = "Subject required")]
-        [Display(Name = "Subject")]
-        public string Subject { get; set; }
-
-        // For DropDownlist
-        public List<SelectListItem> Subjects { get; set; }
-
-        //[Required(ErrorMessage = "Class required")]
-        [Display(Name = "Class")]
-        public int Class { get; set; }
-
-        // For DropDownlist
-        public List<SelectListItem> Classes { get; set; }
-
-        //[Required(ErrorMessage = "Class required")]
-        [Display(Name = "For class teacher")]
-        public int ClassTeacher { get; set; }
-
-        //[Required(ErrorMessage = "Section required")]
-        [Display(Name = "Section")]
-        public string Section { get; set; }
-
-        // For DropDownlist
-        public List<SelectListItem> Sections { get; set; }
-
-        //[Required(ErrorMessage = "Section required")]
-        [Display(Name = "For class teacher")]
-        public string SectionTeacher { get; set; }
-
         //[Required(ErrorMessage = "Gender required")]
         [Display(Name = "Gender")]
         public string Gender { get; set; }
 
         //[Required(ErrorMessage = "Email  required")]
         [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         //[Required(ErrorMessage = "Phone no required")]
         [Display(Name = "Phone")]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
 
         //[Required(ErrorMessage = "Address required")]
@@ -83,6 +59,89 @@ namespace SmartSchool.Models
         public string Password { get; set; }
 
         public bool RememberMe { get; set; }
+
+        public string User { get; set; }
+
+        public int ClassTeacherTblID { get; set; }
+
+        public int ClassID { get; set; }
+
+        //[Required(ErrorMessage = "Class required")]
+        [Display(Name = "Class")]
+        public string ClassNo { get; set; }
+
+        // For DropDownlist
+        public List<SelectListItem> Classes { get; set; }
+
+        public int SectionID { get; set; }
+
+        //[Required(ErrorMessage = "Section required")]
+        [Display(Name = "Section")]
+        public string Section { get; set; }
+
+        // For DropDownlist
+        public List<SelectListItem> Sections { get; set; }
+
+        // For "viewClassTeachers" method values store and view in "ViewClassTeachers" html page
+        public List<Teachers> Data { get; set; }
+
+        public Teachers()
+        {
+            //For DropDownlist
+            Initials = new List<SelectListItem>();
+            string query = @"SELECT* FROM Teachers";
+            foreach (DataRow dr in dam.GetDataTable(query).Rows)
+            {
+                Initials.Add(new SelectListItem
+                {
+                    Text = Convert.ToString(dr["Initial"]),
+                    Value = Convert.ToString(dr["Initial"])
+                });
+            }
+
+            Classes = new List<SelectListItem>();
+            string query2 = @"SELECT ClassNo FROM Class";
+            foreach (DataRow dr in dam.GetDataTable(query2).Rows)
+            {
+                Classes.Add(new SelectListItem
+                {
+                    Text = Convert.ToString(dr["ClassNo"]),
+                    Value = Convert.ToString(dr["ClassNo"])
+                });
+            }
+
+            Sections = new List<SelectListItem>();
+            string query3 = @"SELECT Section.SectionNo, Class.ClassNo
+                              FROM Section
+                              INNER JOIN Class ON Section.ClassID = Class.Id
+                              WHERE ClassNo = '" + ClassNo + "'";
+            foreach (DataRow dr in dam.GetDataTable(query3).Rows)
+            {
+                Sections.Add(new SelectListItem
+                {
+                    Text = Convert.ToString(dr["SectionNo"]),
+                    Value = Convert.ToString(dr["SectionNo"])
+                });
+            }
+        }
+
+        public List<SelectListItem> viewClassWiseSection()
+        {
+            Sections = new List<SelectListItem>();
+            string query4 = @"SELECT Section.SectionNo, Class.ClassNo
+                              FROM Section
+                              INNER JOIN Class ON Section.ClassID = Class.Id
+                              WHERE ClassNo = '" + ClassNo + "'";
+            foreach (DataRow dr in dam.GetDataTable(query4).Rows)
+            {
+                Sections.Add(new SelectListItem
+                {
+                    Text = Convert.ToString(dr["SectionNo"]),
+                    Value = Convert.ToString(dr["SectionNo"])
+                });
+            }
+            return Sections;
+        }
 
         public bool addTeachersID()
         {
@@ -129,7 +188,9 @@ namespace SmartSchool.Models
                     Designation = Convert.ToString(dr["Designation"]),
                     Gender = Convert.ToString(dr["Gender"]),
                     Email = Convert.ToString(dr["Email"]),
-                    Phone = Convert.ToString(dr["Phone"])
+                    Phone = Convert.ToString(dr["Phone"]),
+                    Address = Convert.ToString(dr["Address"]),
+                    ImagePath = Convert.ToString(dr["Image"])
                 });
             }
             return teacherlist;
@@ -154,75 +215,65 @@ namespace SmartSchool.Models
                 return false;
         }
 
-        public Teachers()
+        public bool addClassTeachers()
         {
-            //All list for DropDownlist
-            Classes = new List<SelectListItem>()
-            {
-                new SelectListItem {
-                    Text = "6", Value = "6"
-                },
-                new SelectListItem {
-                    Text = "7", Value = "7"
-                },
-                new SelectListItem {
-                    Text = "8", Value = "8"
-                },
-                new SelectListItem {
-                    Text = "9", Value = "9"
-                },
-                new SelectListItem {
-                    Text = "10", Value = "10"
-                }
-            };
+            string query = @"SELECT* FROM Class WHERE ClassNo = '" + ClassNo + "'";
 
-            Sections = new List<SelectListItem>()
-            {
-                new SelectListItem {
-                    Text = "A", Value = "A"
-                },
-                new SelectListItem {
-                    Text = "B", Value = "B"
-                },
-                new SelectListItem {
-                    Text = "C", Value = "C"
-                }
-            };
-
-            Subjects = new List<SelectListItem>()
-            {
-                new SelectListItem {
-                    Text = "Bangla", Value = "Bangla"
-                },
-                new SelectListItem {
-                    Text = "English", Value = "English"
-                },
-                new SelectListItem {
-                    Text = "Math", Value = "Math"
-                },
-                new SelectListItem {
-                    Text = "ICT", Value = "ICT"
-                }
-            };
-
-            Initials = new List<SelectListItem>();
-            string query = @"SELECT* FROM Teachers";
             foreach (DataRow dr in dam.GetDataTable(query).Rows)
             {
-                Initials.Add(new SelectListItem
-                {
-                    Text = Convert.ToString(dr["Initial"]),
-                    Value = Convert.ToString(dr["Initial"])
-                });
+                ClassID = Convert.ToInt32(dr["Id"]);
             }
+
+            string query2 = @"SELECT* FROM Section WHERE ClassID = " + ClassID + " AND SectionNo = '" + Section + "'";
+
+            foreach (DataRow dr in dam.GetDataTable(query2).Rows)
+            {
+                SectionID = Convert.ToInt32(dr["Id"]);
+            }
+
+            string query3 = @"SELECT* FROM Teachers WHERE Initial = '" + Initial + "'";
+
+            foreach (DataRow dr in dam.GetDataTable(query3).Rows)
+            {
+                Id = Convert.ToString(dr["Id"]);
+            }
+
+            string query4 = @"INSERT INTO ClassTeacher (ClassID, SectionID, TeacherID) VALUES (" + ClassID + ", " + SectionID + ", '" + Id + "')";
+
+            int i = dam.Execute(query4);
+
+            if (i >= 1)
+                return true;
+            else
+                return false;
         }
 
-        public bool assignTeacher()
+        public List<Teachers> viewClassTeachers()
         {
-            int cls = Convert.ToInt32(Class);
-            int tcls = Convert.ToInt32(ClassTeacher);
+            List<Teachers> classteacherlist = new List<Teachers>();
 
-            string query = @"INSERT INTO Assign_Teacher (Class, Section, Subject, Initial, ClassT_Class, ClassT_Section) VALUES (" + cls + ", '" + Section + "', '" + Subject + "', '" + Initial + "', " + tcls + ", '" + SectionTeacher + "')";
+            string query = @"SELECT ClassTeacher.Id, Teachers.Initial, Class.ClassNo, Section.SectionNo
+                             FROM ((ClassTeacher
+                             INNER JOIN Class ON ClassTeacher.ClassID = Class.Id)
+                             INNER JOIN Section ON ClassTeacher.SectionID = Section.Id)
+                             INNER JOIN Teachers ON ClassTeacher.TeacherID = Teachers.Id
+                             WHERE ClassNo = '" + ClassNo + "'";
+
+            foreach (DataRow dr in dam.GetDataTable(query).Rows)
+            {
+                classteacherlist.Add(new Teachers
+                {
+                    ClassTeacherTblID = Convert.ToInt32(dr["Id"]),
+                    Section = Convert.ToString(dr["SectionNo"]),
+                    Initial = Convert.ToString(dr["Initial"]),
+                });
+            }
+            return classteacherlist;
+        }
+
+        public bool deleteClassTeacher(string id)
+        {
+            string query = @"DELETE FROM ClassTeacher WHERE Id = '" + id + "'";
 
             int i = dam.Execute(query);
 
@@ -232,31 +283,51 @@ namespace SmartSchool.Models
                 return false;
         }
 
-        public List<Teachers> viewAssign(){
-            List<Teachers> assignlist = new List<Teachers>();
-            string query = @"SELECT* FROM Assign_Teacher";
+        public bool checkId()
+        {
+            string query = @"SELECT Id FROM Teachers WHERE Id = '" + Id + "'";
+            dam.GetDataTable(query);
+            if (dam.count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void Registration()
+        {
+            string query = @"UPDATE Teachers SET Initial = '" + Initial + "' WHERE Id = '" + Id + "'";
+
+            dam.Execute(query);
+        }
+
+        public void updateInfo(string id)
+        {
+            string query = @"UPDATE Teachers SET Name = '" + Name + "', Initial = '" + Initial + "', Designation = '" + Designation + "', Gender = '" + Gender + "', Email = '" + Email + "', Phone = '" + Phone + "', Address = '" + Address + "', Image = '" + ImagePath + "' WHERE Id = '" + id + "'";
+
+            dam.Execute(query);
+        }
+
+        public List<Teachers> teachersList()
+        {
+            List<Teachers> teacherlist = new List<Teachers>();
+            string query = @"SELECT* FROM Teachers";
 
             foreach (DataRow dr in dam.GetDataTable(query).Rows)
             {
-                assignlist.Add(new Teachers
+                teacherlist.Add(new Teachers
                 {
-                    AssignTableId = Convert.ToInt32(dr["Id"]),
-                    Initial = Convert.ToString(dr["Initial"]),
-                    Subject = Convert.ToString(dr["Subject"]),
-                    Class = Convert.ToInt32(dr["Class"]),
-                    Section = Convert.ToString(dr["Section"]),
-                    ClassTeacher = Convert.ToInt32(dr["ClassT_Class"]),
-                    SectionTeacher = Convert.ToString(dr["ClassT_Section"])
+                    Name = Convert.ToString(dr["Name"]),
+                    Designation = Convert.ToString(dr["Designation"]),
+                    Email = Convert.ToString(dr["Email"]),
+                    Phone = Convert.ToString(dr["Phone"]),
+                    ImagePath = Convert.ToString(dr["Image"])
                 });
             }
-            return assignlist;
-        }
-
-        public void updateAssign()
-        {
-            string query = @"UPDATE Assign_Teacher SET Class = " + Class + ", Section = '" + Section + "', Subject = '" + Subject + "', Initial = '" + Initial + "', ClassT_Class = " + ClassTeacher + ", ClassT_Section = '" + SectionTeacher + "' WHERE Id = " + AssignTableId + "";
-
-            dam.Execute(query);
+            return teacherlist;
         }
     }
 }

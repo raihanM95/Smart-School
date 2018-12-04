@@ -49,3 +49,88 @@ textarea {
     border-radius: 20px;
     box-shadow: 0 -10px 10px -10px #8c8b8b inset;
 }
+
+/*Search*/
+.search-key {
+    width: 123px;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    padding: 12px 20px 12px 12px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-key:focus {
+    width: 100%;
+}
+
+.btn-sr{
+    width: 40px;
+    height: 35px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-sr:hover {
+    border: 1px solid #6A5ACD;
+    background: #4682B4;
+}
+/*End*/
+
+/*Actions CSS*/
+.action-icon{
+    margin-right: 2px;
+    color: white;
+}
+
+.admin-back-icon{
+    margin-right: 4px;
+    color: #428bca;
+}
+
+.action-board{
+    color: #fff;
+    text-decoration: none;
+}
+
+.action-board:hover{
+    text-decoration: none;
+}
+
+.action-btn{
+    margin: 3px;
+}
+/*End*/
+
+/*Calendar Icon CSS*/
+.notice-calendar-icon{
+    color: black;
+}
+/*End*/
+
+/*Reg Icon CSS*/
+.action-icon{
+    margin-right: 2px;
+}
+/*End*/
+
+/*Profile CSS*/
+.gndr-fm{
+    margin-left: 5px;
+}
+
+.a-stdnt-eml{
+    margin-top: -40px;
+}
+/*End*/
+
+/*Marks entry CSS*/
+.marks-txt{
+    width: 50px;
+}
+/*End*/

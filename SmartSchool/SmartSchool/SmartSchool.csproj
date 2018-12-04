@@ -84,6 +84,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -200,25 +202,92 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\ClassController.cs" />
     <Compile Include="Controllers\ERPController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MarksController.cs" />
     <Compile Include="Controllers\NoticeBoardController.cs" />
     <Compile Include="Controllers\ParentsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\Class.cs" />
     <Compile Include="Models\DataManage.cs" />
+    <Compile Include="Models\Extended\ParentsLogin.cs" />
+    <Compile Include="Models\Extended\StudentLogin.cs" />
+    <Compile Include="Models\Extended\TeacherLogin.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Marks.cs" />
     <Compile Include="Models\NoticeBoard.cs" />
     <Compile Include="Models\Parents.cs" />
+    <Compile Include="Models\ParentsLogin.cs">
+      <DependentUpon>ParentsRegistration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParentsRegistration.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParentsRegistration.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParentsRegistration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParentsRegistration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParentsRegistration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParentsRegistration.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResetPassword.cs" />
+    <Compile Include="Models\StudentLogin.cs">
+      <DependentUpon>StudentRegistration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentRegistration.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentRegistration.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentRegistration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentRegistration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentRegistration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentRegistration.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Students.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\TeacherLogin.cs">
+      <DependentUpon>TeacherRegistration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeacherRegistration.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeacherRegistration.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeacherRegistration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeacherRegistration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeacherRegistration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeacherRegistration.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Teachers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -245,6 +314,36 @@
     <Content Include="Images\HomePageImage-2.jpg" />
     <Content Include="Images\HomePageImage-3.png" />
     <Content Include="Images\HomePageImage-4.jpg" />
+    <Content Include="Models\ParentsRegistration.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ParentsRegistration.edmx</DependentUpon>
+      <LastGenOutput>ParentsRegistration.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ParentsRegistration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ParentsRegistration.edmx</DependentUpon>
+      <LastGenOutput>ParentsRegistration.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudentRegistration.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentRegistration.edmx</DependentUpon>
+      <LastGenOutput>StudentRegistration.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudentRegistration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentRegistration.edmx</DependentUpon>
+      <LastGenOutput>StudentRegistration.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TeacherRegistration.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TeacherRegistration.edmx</DependentUpon>
+      <LastGenOutput>TeacherRegistration.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TeacherRegistration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TeacherRegistration.edmx</DependentUpon>
+      <LastGenOutput>TeacherRegistration.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -297,6 +396,27 @@
     <Content Include="Content\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Content\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Content\font-awesome-4.7.0\scss\_variables.scss" />
+    <EntityDeploy Include="Models\TeacherRegistration.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TeacherRegistration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TeacherRegistration.edmx.diagram">
+      <DependentUpon>TeacherRegistration.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ParentsRegistration.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ParentsRegistration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ParentsRegistration.edmx.diagram">
+      <DependentUpon>ParentsRegistration.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StudentRegistration.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentRegistration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudentRegistration.edmx.diagram">
+      <DependentUpon>StudentRegistration.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -352,24 +472,73 @@
     <Content Include="Views\Teachers\UpdateTeacherInfo.cshtml" />
     <Content Include="Views\Teachers\ViewDetails.cshtml" />
     <Content Include="Views\Teachers\AddTeachersID.cshtml" />
-    <Content Include="Views\Teachers\AssignTeacher.cshtml" />
-    <Content Include="Views\Teachers\UpdateAssign.cshtml" />
     <Content Include="Views\NoticeBoard\ViewNotice.cshtml" />
     <Content Include="Views\NoticeBoard\PublishNotice.cshtml" />
-    <Content Include="Views\Teachers\ViewAssign.cshtml" />
     <Content Include="Views\Students\ViewStudents.cshtml" />
-    <Content Include="Views\Students\AssignIntoClass.cshtml" />
-    <Content Include="Views\Students\ViewAssign.cshtml" />
-    <Content Include="Views\Students\UpdateClass.cshtml" />
     <Content Include="Views\Teachers\Login.cshtml" />
-    <Content Include="Views\Teachers\Register.cshtml" />
     <Content Include="Views\Students\Login.cshtml" />
     <Content Include="Views\Students\Register.cshtml" />
     <Content Include="Views\Parents\Register.cshtml" />
     <Content Include="Views\Parents\Login.cshtml" />
+    <Content Include="Views\Teachers\Register.cshtml" />
+    <Content Include="Views\Subject\AssignSubject.cshtml" />
+    <Content Include="Views\Subject\ViewAssign.cshtml" />
+    <Content Include="Views\Subject\UpdateAssign.cshtml" />
+    <Content Include="Views\Class\AssignIntoClass.cshtml" />
+    <Content Include="Views\Class\ViewAssign.cshtml" />
+    <Content Include="Views\Class\UpdateAssign.cshtml" />
+    <Content Include="Views\Teachers\VerifyAccount.cshtml" />
+    <Content Include="Views\Teachers\_TeacherLayout.cshtml" />
+    <Content Include="Views\Teachers\_LogoutPartialTeacher.cshtml" />
+    <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\Teachers\ForgotPassword.cshtml" />
+    <Content Include="Views\Teachers\ResetPassword.cshtml" />
+    <Content Include="Views\Class\ViewClass.cshtml" />
+    <Content Include="Views\Class\AddClass.cshtml" />
+    <Content Include="Views\Class\AddSection.cshtml" />
+    <Content Include="Views\Subject\AddSubject.cshtml" />
+    <Content Include="Views\Subject\ViewSubject.cshtml" />
+    <Content Include="Views\Teachers\ViewClassTeachers.cshtml" />
+    <Content Include="Views\Teachers\AddClassTeachers.cshtml" />
+    <Content Include="Views\Students\AddStudents.cshtml" />
+    <Content Include="Views\Students\UpdateStudentInfo.cshtml" />
+    <Content Include="Views\Marks\EntryMarks.cshtml" />
+    <Content Include="Views\Marks\ViewMarks.cshtml" />
+    <Content Include="Views\Attendance\EntryAttendance.cshtml" />
+    <Content Include="Views\Attendance\ViewAttendance.cshtml" />
+    <Content Include="Views\NoticeBoard\Notice.cshtml" />
+    <Content Include="Views\Parents\VerifyAccount.cshtml" />
+    <Content Include="Views\Parents\ForgotPassword.cshtml" />
+    <Content Include="Views\Parents\_ParentsLayout.cshtml" />
+    <Content Include="Views\Parents\_LogoutPartialParents.cshtml" />
+    <Content Include="Views\Parents\ResetPassword.cshtml" />
+    <Content Include="Views\Parents\Index.cshtml" />
+    <Content Include="Views\Students\VerifyAccount.cshtml" />
+    <Content Include="Views\Students\_StudentLayout.cshtml" />
+    <Content Include="Views\Students\_LogoutPartialStudent.cshtml" />
+    <Content Include="Views\Students\ForgotPassword.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Students\ResetPassword.cshtml" />
+    <Content Include="Views\Teachers\UpdateInfo.cshtml" />
+    <Content Include="Views\Students\UpdateInfo.cshtml" />
+    <Content Include="Views\Parents\UpdateInfo.cshtml" />
+    <Content Include="Views\Teachers\TeachersList.cshtml" />
+    <Content Include="Views\Marks\LiveResults.cshtml" />
+    <Content Include="Views\Marks\_LogoutPartialParents.cshtml" />
+    <Content Include="Views\Attendance\_LogoutPartialParents.cshtml" />
+    <Content Include="Views\Marks\_LogoutPartialTeacher.cshtml" />
+    <Content Include="Views\Attendance\_LogoutPartialTeacher.cshtml" />
+    <Content Include="Views\Marks\_LogoutPartialStudent.cshtml" />
+    <Content Include="Views\Marks\LiveResult.cshtml" />
+    <Content Include="Views\Marks\Result.cshtml" />
+    <Content Include="Views\Attendance\LiveAttendance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="NoticeFiles\" />
+    <Folder Include="ParentsImage\" />
+    <Folder Include="StudentsImage\" />
+    <Folder Include="TeachersImage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -378,6 +547,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -397,7 +569,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>9780</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9780/</IISUrl>
+          <IISUrl>http://localhost:9781/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

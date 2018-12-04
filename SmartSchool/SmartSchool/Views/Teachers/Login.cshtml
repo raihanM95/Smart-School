@@ -39,7 +39,7 @@
                 <label>Employee Id:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    @Html.TextBoxFor(m => m.Id, new { @class = "form-control", })
+                    @Html.EditorFor(m => m.Id, new { htmlAttributes = new { @class = "form-control", required = "Id required", @placeholder = "Enter your id" } })
                 </div>
                 @Html.ValidationMessageFor(m => m.Id, "", new { @class = "text-danger" })
             </div>
@@ -47,13 +47,13 @@
                 <label>Password:</label>
                 <div class="group">
                     <i class="fas fa-unlock"></i>
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "Password required", @placeholder = "Enter password" })
                 </div>
                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
             </div>
             <div class="forgot">
-                <a href="#">Forgot Password?</a>
-                <p><input type="checkbox">Remember Me</p>
+                <a href="#">@Html.ActionLink("Forgot Password?", "ForgotPassword", "Teachers")</a>
+                <p>@Html.EditorFor(model => model.RememberMe)Remember Me</p>
             </div>
             <p class="login-validation">@ViewBag.ErrorMessage</p>
             <button type="submit">Login</button>

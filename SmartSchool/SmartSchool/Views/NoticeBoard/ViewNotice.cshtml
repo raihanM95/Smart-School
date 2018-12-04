@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SmartSchool.Models.NoticeBoard>
+﻿@model SmartSchool.Models.NoticeBoard
 
 @{
     ViewBag.Title = "Notice Board";
@@ -11,26 +11,38 @@
 <p>
     <button class="btn btn-info" onclick="location.href='@Url.Action("PublishNotice", "NoticeBoard")'"><span class="fa fa-telegram admin-action-icon"></span>Publish</button>
 </p>
+<!-- Search form -->
+@using (Html.BeginForm())
+{
+    <p class="form-inline active-cyan-4">
+        @Html.EditorFor(model => model.Search, new { htmlAttributes = new { @class = "search-key", @placeholder = "Search..." }, onchange = "this.form.submit();" })
+        <button type="submit" class="btn-sr"><i class="fa fa-search"></i></button>
+    </p>
+}
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
+            <th style="width: 5%">Serial</th>
             <th style="width: 30%">
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th style="width: 20%">
                 @Html.DisplayNameFor(model => model.FileName)
             </th>
-            <th style="width: 30%">
+            <th style="width: 20%">
                 @Html.DisplayNameFor(model => model.Date)
             </th>
-            <th></th>
+            <th style="width: 20%"></th>
         </tr>
     </thead>
-    @*
-    @foreach (var item in Model)
+    
+    @{ int rowNo = 0; }
+    @foreach (var item in Model.Data)
     {
         <tbody>
             <tr>
+                <td>@(rowNo += 1)</td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
@@ -38,11 +50,13 @@
                     @Html.DisplayFor(modelItem => item.FileName)
                 </td>
                 <td>
-                    @Html.ActionLink("Downlaod", "DownLoadFile", new { id = item.Id })
-                    <p class="btn btn-danger btn-sm admin-action-btn"><span class="fa fa-trash admin-action-icon"></span>@Html.ActionLink("Delete", "DeleteTeacher", new { id = item.Id }, new { @class = "admin-action-teacher", onclick = "return confirm('Are sure wants to delete?');" })</p>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    <p class="btn btn-primary btn-sm admin-action-btn"><span class="fa fa-download admin-action-icon"></span>@Html.ActionLink("Download", "DownloadFile", new { id = item.Id }, new { @class = "admin-action-teacher"})</p>
+                    <p class="btn btn-danger btn-sm admin-action-btn"><span class="fa fa-trash admin-action-icon"></span>@Html.ActionLink("Delete", "DeleteFile", new { id = item.Id }, new { @class = "admin-action-teacher", onclick = "return confirm('Are sure wants to delete?');" })</p>
                 </td>
             </tr>
         </tbody>
-    }*@
-
+    }
 </table>
